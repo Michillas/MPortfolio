@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Linkedin, Mail } from "lucide-react";
 import Status from "../shared/status";
+import LaurelBranch from "../decoration/LaurelWreath";
 
 const Hero = () => {
   return (
@@ -16,6 +17,11 @@ const Hero = () => {
           "inset-x-0 h-full skew-y-12"
         )}
       />
+      
+      {/* Laurel Branches */}
+      <LaurelBranch side="left" className="hidden md:block" />
+      <LaurelBranch side="right" className="hidden md:block" />
+      
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-20">
         <Status />
       </div>
@@ -29,9 +35,7 @@ const Hero = () => {
           </h2>
         </div>
         <p className="mt-4 text-[17px] md:text-lg text-gray-600 dark:text-gray-400">
-          Apasionado del desarrollo de software con vocación por convertir ideas
-          en productos claros, útiles y mantenibles, cuidando cada detalle del
-          proceso.
+          Profesional en soluciones IT, situado en Madrid, España 🇪🇸.
         </p>
         <div className="mt-6 flex items-center justify-center gap-4">
           <Button size="lg" className="rounded-full text-base select-text">
