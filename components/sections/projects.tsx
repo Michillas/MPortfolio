@@ -30,7 +30,7 @@ const features = [
   {
     name: "Gestor de Formularios",
     description: "NextJS, Tailwind CSS, Supabase.",
-    href: "#",
+    href: "https://github.com/Michillas/MForms",
     cta: "Ver proyecto",
     className: "col-span-3 lg:col-span-1",
     background: <></>,
@@ -47,7 +47,7 @@ const features = [
 
     name: "Test de Personalidad",
     description: "NextJS, Spring Boot, Tailwind CSS.",
-    href: "#",
+    href: "https://github.com/Michillas/PersonalityQuiz",
     cta: "Ver proyecto",
     className: "col-span-3 lg:col-span-2",
     background: <img className="absolute h-[280px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="https://private-user-images.githubusercontent.com/140931203/318138746-2fc2e3cd-515d-4f32-9008-f9215b15a862.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTYxMjg1NTEsIm5iZiI6MTc1NjEyODI1MSwicGF0aCI6Ii8xNDA5MzEyMDMvMzE4MTM4NzQ2LTJmYzJlM2NkLTUxNWQtNGYzMi05MDA4LWY5MjE1YjE1YTg2Mi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODI1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgyNVQxMzI0MTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wMDM0ZGJkZmU0MDlmZGQxNDZkY2MyYjdjOWE0MWIzYjIzMTRkY2RmNDViOTJhMzI4YjM3ZDk5NzM0Y2EzMjY2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.-dA76SSDOKiBrXT1TiQOgn5lF6DTjvMBzRHNLRaT8UU"/>,
