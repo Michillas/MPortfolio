@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "@/components/shared/theme-provider";
 
 export const metadata: Metadata = {
   title: "Desarrollador Web | Miguel Ángel Montilla Garcia",
@@ -20,7 +21,9 @@ export default function RootLayout({
         className="antialiased"
         style={{ fontFamily: "'Satoshi', sans-serif" }}
       >
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

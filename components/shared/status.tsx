@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Status = () => {
   return (
-    <Card className="mt-6 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 border-emerald-200/60 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] max-w-md mx-auto group overflow-hidden relative p-0">
+    <Card className="mt-6 bg-gradient-to-br from-emerald-500/50 border-2 border-emerald-200/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] max-w-md mx-auto group overflow-hidden relative p-0">
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 via-green-400/20 to-teal-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <CardContent className="px-4 py-2">
         <div className="flex items-center justify-between">
