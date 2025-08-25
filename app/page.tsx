@@ -1,3 +1,4 @@
+import Experience from '@/components/sections/experience';
 import Footer from '@/components/sections/footer';
 import Hero from '@/components/sections/hero';
 import { Projects } from '@/components/sections/projects';
@@ -10,6 +11,7 @@ export default function Home() {
         <ThemeToggle />
       </div>
       <Hero />
+      <Experience />
       <Projects />
       <Footer />
     </>
