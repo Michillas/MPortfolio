@@ -31,7 +31,7 @@ const Hero = () => {
             Miguel Ángel Montilla Garcia
           </h1>
           <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2] tracking-tight text-gray-700 dark:text-gray-300">
-            Desarrollador Web | Fullstack | Devops
+            Desarrollador Web | Fullstack | DevOps
           </h2>
         </div>
         <p className="mt-4 text-[17px] md:text-lg text-gray-600 dark:text-gray-400">

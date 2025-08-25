@@ -1,4 +1,5 @@
 import Hero from '@/components/sections/hero';
+import { Projects } from '@/components/sections/projects';
 import { ThemeToggle } from '@/components/shared/theme-toggle';
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
         <ThemeToggle />
       </div>
       <Hero />
+      <Projects />
     </>
   );
 }
