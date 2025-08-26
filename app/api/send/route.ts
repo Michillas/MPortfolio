@@ -44,8 +44,8 @@ export async function POST(request: NextRequest) {
     
     const emailData = {
       from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: ['michasmont@gmail.com'], // Your email address
-      replyTo: email, // User's email for easy replies
+      to: ['michasmont@gmail.com'],
+      replyTo: email,
       subject: `Portfolio Contact: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
