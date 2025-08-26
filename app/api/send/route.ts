@@ -1,4 +1,3 @@
-import { EmailTemplate } from '../../../components/email/template';
 import { Resend } from 'resend';
 import { NextRequest } from 'next/server';
 
@@ -48,27 +47,38 @@ export async function POST(request: NextRequest) {
       to: ['michasmont@gmail.com'], // Your email address
       replyTo: email, // User's email for easy replies
       subject: `Portfolio Contact: ${subject}`,
-      react: EmailTemplate({ 
-        name,
-        email,
-        subject,
-        message
-      }),
-      // Fallback HTML in case React component fails
       html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-          <h2>Nueva consulta desde tu Portfolio</h2>
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #2c5282; border-bottom: 2px solid #2c5282; padding-bottom: 10px;">
+            Nueva consulta desde tu Portfolio
+          </h2>
+          
           <div style="background-color: #f7fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3>Información del contacto:</h3>
-            <p><strong>Nombre:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Asunto:</strong> ${subject}</p>
+            <h3 style="margin: 0 0 15px 0; color: #2d3748;">Información del contacto:</h3>
+            
+            <div style="margin-bottom: 10px;">
+              <strong>Nombre:</strong> ${name}
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <strong>Email:</strong> ${email}
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <strong>Asunto:</strong> ${subject}
+            </div>
           </div>
-          <div>
-            <h3>Mensaje:</h3>
-            <div style="background-color: #ffffff; padding: 15px; border-left: 4px solid #2c5282; border-radius: 4px;">
+          
+          <div style="margin: 20px 0;">
+            <h3 style="color: #2d3748; margin-bottom: 10px;">Mensaje:</h3>
+            <div style="background-color: #ffffff; padding: 15px; border-left: 4px solid #2c5282; border-radius: 4px; white-space: pre-wrap;">
               ${message.replace(/\n/g, '<br>')}
             </div>
+          </div>
+          
+          <div style="margin-top: 30px; font-size: 12px; color: #718096; border-top: 1px solid #e2e8f0; padding-top: 15px;">
+            <p>Este mensaje fue enviado desde tu portfolio personal.</p>
+            <p>Puedes responder directamente a este email para contactar con ${name}.</p>
           </div>
         </div>
       `
