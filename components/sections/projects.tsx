@@ -33,7 +33,7 @@ const features = [
     href: "https://github.com/Michillas/MForms",
     cta: "Ver proyecto",
     className: "col-span-3 lg:col-span-1",
-    background: <></>,
+    background: <img className="absolute h-[260px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="web3.png"/>,
   },
   {
     name: "Web de Finanzas",
