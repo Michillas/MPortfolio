@@ -2,7 +2,7 @@ import Experience from '@/components/sections/experience';
 import Footer from '@/components/sections/footer';
 import Hero from '@/components/sections/hero';
 import { Projects } from '@/components/sections/projects';
-import Testimonial from '@/components/sections/testimonials';
+import Contact from '@/components/sections/contact';
 import { ThemeToggle } from '@/components/shared/theme-toggle';
 
 export default function Home() {
@@ -14,6 +14,7 @@ export default function Home() {
       <Hero />
       <Experience />
       <Projects />
+      <Contact />
       <Footer />
     </>
   );
