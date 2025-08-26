@@ -111,7 +111,7 @@ const Contact = () => {
           </div>
           <CardTitle className="text-2xl md:text-3xl">Contáctame</CardTitle>
           <CardDescription className="text-base">
-            ¿Tienes un proyecto en mente? Me encantaría saber de ti.
+            ¿Quieres contactarme? Me encantaría saber de ti.
           </CardDescription>
         </CardHeader>
         
