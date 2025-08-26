@@ -83,12 +83,20 @@ const Contact = () => {
     setSubmitStatus("idle");
     
     try {
-      // Simulate form submission - replace with actual API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // For now, we'll just simulate success
-      // In a real app, you would send the data to your backend API
-      console.log("Form submitted:", formData);
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      const result = await response.json();
+      console.log("Email sent successfully:", result);
       
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
