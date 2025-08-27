@@ -1,9 +1,10 @@
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Status from "../shared/status";
 import LaurelBranch from "../decoration/LaurelWreath";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -17,11 +18,11 @@ const Hero = () => {
           "inset-x-0 h-full skew-y-12"
         )}
       />
-      
+
       {/* Laurel Branches */}
       <LaurelBranch side="left" className="hidden md:block" />
       <LaurelBranch side="right" className="hidden md:block" />
-      
+
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-20">
         <Status />
       </div>
@@ -41,13 +42,27 @@ const Hero = () => {
           <Button size="lg" className="rounded-full text-base select-text">
             <Mail className="!h-5 !w-5" /> michasmont@gmail.com
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="rounded-full text-base shadow-none"
+          <Link
+            href="https://www.linkedin.com/in/miguelangelmontilla/"
+            target="_blank"
           >
-            <Linkedin className="!h-5 !w-5" /> Linkedin
-          </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-full text-base shadow-none cursor-pointer"
+            >
+              <Linkedin className="!h-5 !w-5" /> Linkedin
+            </Button>
+          </Link>
+          <Link href="https://github.com/michillas" target="_blank">
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-full text-base shadow-none cursor-pointer"
+            >
+              <Github className="!h-5 !w-5" /> GitHub
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
