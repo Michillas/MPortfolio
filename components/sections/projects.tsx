@@ -1,7 +1,9 @@
+"use client";
+
 import { FileTextIcon, QuestionMarkIcon } from "@radix-ui/react-icons";
 import { Banknote, Share2Icon } from "lucide-react";
-
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+import { useLanguage } from "@/lib/language-context";
 
 const files = [
   {
@@ -26,46 +28,45 @@ const files = [
   },
 ];
 
-const features = [
-  {
-    name: "Gestor de Formularios",
-    description: "NextJS, Tailwind CSS, Supabase.",
-    href: "https://github.com/Michillas/MForms",
-    cta: "Ver proyecto",
-    className: "col-span-3 lg:col-span-1",
-    background: <img className="absolute h-[260px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="web3.png"/>,
-  },
-  {
-    name: "Web de Finanzas",
-    description: "NextJS, Spring Boot, Tailwind CSS, Docker, IA.",
-    href: "https://webfinanzas.vercel.app/",
-    cta: "Ver proyecto",
-    className: "col-span-3 lg:col-span-2",
-    background: <img className="absolute h-[300px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="web1.png"/>,
-  },
-  {
-
-    name: "Test de Personalidad",
-    description: "NextJS, Spring Boot, Tailwind CSS.",
-    href: "https://github.com/Michillas/PersonalityQuiz",
-    cta: "Ver proyecto",
-    className: "col-span-3 lg:col-span-2",
-    background: <img className="absolute h-[280px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="web2.png"/>,
-  },
-  {
-    name: "Tu proyecto",
-    description: "Contacta conmigo para más información.",
-    className: "col-span-3 lg:col-span-1",
-    href: "#",
-    cta: "Más información",
-    background: <>
-        <QuestionMarkIcon className="absolute h-[200px] top-8 w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_1%,#000_100%)] group-hover:scale-110" />
-    </>,
-  },
-
-];
-
 export function Projects() {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      name: t('projects.forms.name'),
+      description: t('projects.forms.description'),
+      href: "https://github.com/Michillas/MForms",
+      cta: t('projects.forms.cta'),
+      className: "col-span-3 lg:col-span-1",
+      background: <img className="absolute h-[260px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="web3.png"/>,
+    },
+    {
+      name: t('projects.finance.name'),
+      description: t('projects.finance.description'),
+      href: "https://webfinanzas.vercel.app/",
+      cta: t('projects.finance.cta'),
+      className: "col-span-3 lg:col-span-2",
+      background: <img className="absolute h-[300px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="web1.png"/>,
+    },
+    {
+      name: t('projects.personality.name'),
+      description: t('projects.personality.description'),
+      href: "https://github.com/Michillas/PersonalityQuiz",
+      cta: t('projects.personality.cta'),
+      className: "col-span-3 lg:col-span-2",
+      background: <img className="absolute h-[280px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="web2.png"/>,
+    },
+    {
+      name: t('projects.yours.name'),
+      description: t('projects.yours.description'),
+      className: "col-span-3 lg:col-span-1",
+      href: "#",
+      cta: t('projects.yours.cta'),
+      background: <>
+          <QuestionMarkIcon className="absolute h-[200px] top-8 w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_1%,#000_100%)] group-hover:scale-110" />
+      </>,
+    },
+  ];
   return (
     <div className="flex items-center justify-center pb-6 px-6 overflow-hidden">
       <BentoGrid className="max-w-4xl">

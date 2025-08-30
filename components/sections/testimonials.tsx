@@ -11,32 +11,32 @@ import {
 import { cn } from "@/lib/utils";
 import { StarIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-const testimonials = [
-  {
-    id: 1,
-    name: "Jhon Doe",
-    designation: "Software Engineer",
-    company: "X",
-    testimonial:
-      "Una experiencia increible, gran trabajador, muy profesional y cumplidor con los plazos." +
-      "Disciplina y dedicación son sus principales características.",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
-  },
-  {
-    id: 2,
-    name: "Tú",
-    designation: "Empresario",
-    company: "X",
-    testimonial:
-      "Aportó una solución innovadora acorde a nuestras necesidades." +
-      "Su capacidad para entender nuestras necesidades y proponer mejoras fue invaluable.",
-    avatar: "https://randomuser.me/api/portraits/women/2.jpg",
-  },
-];
+import { useLanguage } from "@/lib/language-context";
+
 const Testimonial = () => {
+  const { t } = useLanguage();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+
+  const testimonials = [
+    {
+      id: 1,
+      name: t('testimonials.john.name'),
+      designation: t('testimonials.john.designation'),
+      company: "X",
+      testimonial: t('testimonials.john.testimonial'),
+      avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+    },
+    {
+      id: 2,
+      name: t('testimonials.you.name'),
+      designation: t('testimonials.you.designation'),
+      company: "X",
+      testimonial: t('testimonials.you.testimonial'),
+      avatar: "https://randomuser.me/api/portraits/women/2.jpg",
+    },
+  ];
   useEffect(() => {
     if (!api) {
       return;
@@ -51,7 +51,7 @@ const Testimonial = () => {
     <div className="min-h-screen w-full flex justify-center items-center py-12 px-6">
       <div className="w-full">
         <h2 className="mb-14 text-5xl md:text-6xl font-bold text-center tracking-tight">
-          Reviews
+          {t('testimonials.title')}
         </h2>
         <div className="container w-full lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-12">
           <Carousel setApi={setApi}>
@@ -84,7 +84,14 @@ const Testimonial = () => {
 const TestimonialCard = ({
   testimonial,
 }: {
-  testimonial: (typeof testimonials)[number];
+  testimonial: {
+    id: number;
+    name: string;
+    designation: string;
+    company: string;
+    testimonial: string;
+    avatar: string;
+  };
 }) => (
   <div className="mb-8 bg-accent rounded-xl py-8 px-6 sm:py-6">
     <div className="flex items-center justify-between gap-20">

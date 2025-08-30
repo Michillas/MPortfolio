@@ -1,34 +1,35 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Building2, Calendar } from "lucide-react";
-
-const experiences = [
-  {
-    title: "Full Stack Developer",
-    company: "Freelance",
-    period: "2025 Jul - Present",
-    description:
-      "Developed and maintained web applications for various clients, focusing on user experience and performance.",
-    technologies: ["NextJS", "Node.js", "TypeScript", "AWS"],
-  },
-  {
-    title: "Automations Developer",
-    company: "Kyndryl",
-    period: "2025 Mar - 2025 Jun",
-    description:
-      "Implemented automation solutions to improve operational efficiency.",
-    technologies: ["Ansible", "Python", "REST API", "Docker"],
-  },
-  {
-    title: "DevOps Internship",
-    company: "Infortec Consultores",
-    period: "2025 Mar - 2025 Jun",
-    description:
-      "Assisted in the deployment and monitoring of applications, collaborated with development teams to streamline CI/CD pipelines.",
-    technologies: ["Agile", "CI/CD", "Docker", "Kubernetes"],
-  },
-];
+import { useLanguage } from "@/lib/language-context";
 
 export default function Experience() {
+  const { t } = useLanguage();
+
+  const experiences = [
+    {
+      title: t('experience.freelance.title'),
+      company: t('experience.freelance.company'),
+      period: t('experience.freelance.period'),
+      description: t('experience.freelance.description'),
+      technologies: ["NextJS", "Node.js", "TypeScript", "AWS"],
+    },
+    {
+      title: t('experience.kyndryl.title'),
+      company: t('experience.kyndryl.company'),
+      period: t('experience.kyndryl.period'),
+      description: t('experience.kyndryl.description'),
+      technologies: ["Ansible", "Python", "REST API", "Docker"],
+    },
+    {
+      title: t('experience.infortec.title'),
+      company: t('experience.infortec.company'),
+      period: t('experience.infortec.period'),
+      description: t('experience.infortec.description'),
+      technologies: ["Agile", "CI/CD", "Docker", "Kubernetes"],
+    },
+  ];
   return (
     <div className="max-w-screen-sm mx-auto pb-6 md:pb-12 px-6">
       <div className="relative ml-3 top-[-6rem]">

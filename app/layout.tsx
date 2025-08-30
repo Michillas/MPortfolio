@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/shared/theme-provider";
+import { LanguageProvider } from "@/lib/language-context";
 
 export const metadata: Metadata = {
   title: "Desarrollador Web | Miguel Ángel Montilla Garcia",
@@ -30,7 +31,9 @@ export default function RootLayout({
         style={{ fontFamily: "'Satoshi', sans-serif" }}
       >
         <ThemeProvider>
-          {children}
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

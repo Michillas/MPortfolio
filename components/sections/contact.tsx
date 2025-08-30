@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Send, User, MessageSquare, CheckCircle, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/language-context";
 
 interface FormData {
   name: string;
@@ -24,6 +25,7 @@ interface FormErrors {
 }
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -39,21 +41,21 @@ const Contact = () => {
     const newErrors: FormErrors = {};
     
     if (!formData.name.trim()) {
-      newErrors.name = "El nombre es obligatorio";
+      newErrors.name = t('contact.name.required');
     }
     
     if (!formData.email.trim()) {
-      newErrors.email = "El email es obligatorio";
+      newErrors.email = t('contact.email.required');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Por favor, introduce un email válido";
+      newErrors.email = t('contact.email.invalid');
     }
     
     if (!formData.subject.trim()) {
-      newErrors.subject = "El asunto es obligatorio";
+      newErrors.subject = t('contact.subject.required');
     }
     
     if (!formData.message.trim()) {
-      newErrors.message = "El mensaje es obligatorio";
+      newErrors.message = t('contact.message.required');
     }
     
     setErrors(newErrors);
@@ -117,9 +119,9 @@ const Contact = () => {
               <Mail className="h-6 w-6 text-primary" />
             </div>
           </div>
-          <CardTitle className="text-2xl md:text-3xl">Contáctame</CardTitle>
+          <CardTitle className="text-2xl md:text-3xl">{t('contact.title')}</CardTitle>
           <CardDescription className="text-base">
-            ¿Quieres contactarme? Me encantaría saber de ti.
+            {t('contact.subtitle')}
           </CardDescription>
         </CardHeader>
         
@@ -129,13 +131,13 @@ const Contact = () => {
               <div className="space-y-2">
                 <Label htmlFor="name">
                   <User className="h-4 w-4" />
-                  Nombre
+                  {t('contact.name.label')}
                 </Label>
                 <Input
                   id="name"
                   name="name"
                   type="text"
-                  placeholder="Tu nombre"
+                  placeholder={t('contact.name.placeholder')}
                   value={formData.name}
                   onChange={handleInputChange}
                   aria-invalid={!!errors.name}
@@ -154,13 +156,13 @@ const Contact = () => {
               <div className="space-y-2">
                 <Label htmlFor="email">
                   <Mail className="h-4 w-4" />
-                  Email
+                  {t('contact.email.label')}
                 </Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="tu.email@ejemplo.com"
+                  placeholder={t('contact.email.placeholder')}
                   value={formData.email}
                   onChange={handleInputChange}
                   aria-invalid={!!errors.email}
@@ -180,13 +182,13 @@ const Contact = () => {
             <div className="space-y-2">
               <Label htmlFor="subject">
                 <MessageSquare className="h-4 w-4" />
-                Asunto
+                {t('contact.subject.label')}
               </Label>
               <Input
                 id="subject"
                 name="subject"
                 type="text"
-                placeholder="¿De qué quieres hablar?"
+                placeholder={t('contact.subject.placeholder')}
                 value={formData.subject}
                 onChange={handleInputChange}
                 aria-invalid={!!errors.subject}
@@ -205,12 +207,12 @@ const Contact = () => {
             <div className="space-y-2">
               <Label htmlFor="message">
                 <MessageSquare className="h-4 w-4" />
-                Mensaje
+                {t('contact.message.label')}
               </Label>
               <Textarea
                 id="message"
                 name="message"
-                placeholder="Cuéntame sobre tu proyecto o pregúntame lo que quieras..."
+                placeholder={t('contact.message.placeholder')}
                 value={formData.message}
                 onChange={handleInputChange}
                 rows={5}
@@ -231,7 +233,7 @@ const Contact = () => {
               <div className="p-4 rounded-lg bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800">
                 <p className="text-sm text-green-800 dark:text-green-400 flex items-center gap-2">
                   <CheckCircle className="h-4 w-4" />
-                  ¡Mensaje enviado correctamente! Te responderé pronto.
+                  {t('contact.success')}
                 </p>
               </div>
             )}
@@ -240,7 +242,7 @@ const Contact = () => {
               <div className="p-4 rounded-lg bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800">
                 <p className="text-sm text-red-800 dark:text-red-400 flex items-center gap-2">
                   <AlertCircle className="h-4 w-4" />
-                  Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+                  {t('contact.error')}
                 </p>
               </div>
             )}
@@ -255,12 +257,12 @@ const Contact = () => {
                 {isSubmitting ? (
                   <>
                     <div className="h-4 w-4 animate-spin rounded-full border-2 border-transparent border-t-current" />
-                    Enviando...
+                    {t('contact.sending')}
                   </>
                 ) : (
                   <>
                     <Send className="h-4 w-4" />
-                    Enviar mensaje
+                    {t('contact.send')}
                   </>
                 )}
               </Button>
