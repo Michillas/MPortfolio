@@ -5,6 +5,14 @@ import { ThemeProvider } from "@/components/shared/theme-provider";
 export const metadata: Metadata = {
   title: "Desarrollador Web | Miguel Ángel Montilla Garcia",
   description: "Portfolio personal de Miguel Ángel Montilla Garcia",
+  keywords: ["desarrollador web en madrid", "full stack", "portfolio", "Miguel Ángel Montilla Garcia"],
+  authors: [{ name: "Miguel Ángel Montilla Garcia" }],
+  creator: "Miguel Ángel Montilla Garcia",
+  openGraph: {
+    title: "Desarrollador Web en Madrid | Miguel Ángel Montilla Garcia",
+    description: "Portfolio personal de Miguel Ángel Montilla Garcia - Desarrollador Web Full Stack",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
