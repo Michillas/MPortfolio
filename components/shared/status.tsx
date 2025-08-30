@@ -1,8 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useLanguage } from "@/lib/language-context";
 
 const Status = () => {
+  const { t } = useLanguage();
   return (
     <Card className="mt-6 bg-gradient-to-br from-emerald-500/50 border-2 border-emerald-200/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] max-w-md mx-auto group overflow-hidden relative p-0">
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 via-green-400/20 to-teal-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -22,7 +24,7 @@ const Status = () => {
                   <div className="absolute inset-0 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping" />
                 </div>
                 <Badge className="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white border-0 font-medium px-3 py-1 shadow-sm">
-                  Disponible para trabajar
+                  {t('status.status')}
                 </Badge>
               </div>
             </div>

@@ -15,6 +15,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 // Translation dictionary
 const translations = {
   es: {
+    'status.status': 'Disponible para trabajar',
+
     // Theme toggle
     'theme.toggle': 'Cambiar tema',
     'language.toggle': 'Cambiar idioma',
@@ -101,6 +103,8 @@ const translations = {
     'footer.rights': 'Todos los derechos reservados',
   },
   en: {
+    'status.status': 'Open and ready to work',
+
     // Theme toggle
     'theme.toggle': 'Toggle theme',
     'language.toggle': 'Toggle language',
