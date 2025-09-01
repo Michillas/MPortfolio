@@ -5,6 +5,7 @@ import { Projects } from '@/components/sections/projects';
 import Contact from '@/components/sections/contact';
 import { ThemeToggle } from '@/components/shared/theme-toggle';
 import { LanguageToggle } from '@/components/shared/language-toggle';
+import { Separator } from "@/components/ui/separator"
 
 export default function Home() {
   return (

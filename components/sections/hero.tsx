@@ -36,11 +36,9 @@ const Hero = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold !leading-[1.2] tracking-tight">
             {t('hero.name')}
           </h1>
-          <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2] tracking-tight text-gray-700 dark:text-gray-300">
-            <TextAnimate animation="blurIn" as="h2">
-              {t('hero.role')}
-            </TextAnimate>
-          </h2>
+          <TextAnimate animation="blurIn" as="h2" className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2] tracking-tight text-gray-700 dark:text-gray-300">
+            {t('hero.role')}
+          </TextAnimate>
         </div>
         <p className="mt-4 text-[17px] md:text-lg text-gray-600 dark:text-gray-400">
           {t('hero.location')}

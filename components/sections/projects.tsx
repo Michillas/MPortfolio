@@ -85,12 +85,10 @@ export function Projects() {
     },
   ];
   return (
-    <>
-      <h2 className="mb-14 text-4xl md:text-5xl font-bold text-center tracking-tight">
-        <TextAnimate animation="blurIn" as="h2">
-          {t("projects.title")}
-        </TextAnimate>
-      </h2>
+    <div className="py-16 dark:bg-neutral-900 bg-neutral-100 border-y-1 dark:border-neutral-800 border-neutral-300">
+      <TextAnimate animation="blurIn" as="h2" className="mb-14 text-4xl md:text-5xl font-bold text-center tracking-tight">
+        {t("projects.title")}
+      </TextAnimate>
       <div className="flex items-center justify-center pb-6 px-6 overflow-hidden">
         <BentoGrid className="max-w-4xl">
           {features.map((feature, idx) => (
@@ -98,6 +96,6 @@ export function Projects() {
           ))}
         </BentoGrid>
       </div>
-    </>
+    </div>
   );
 }

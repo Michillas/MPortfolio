@@ -31,7 +31,7 @@ export default function Experience() {
     },
   ];
   return (
-    <div className="max-w-screen-sm mx-auto pb-6 md:pb-12 px-6">
+    <div className="max-w-screen-sm mx-auto px-6">
       <div className="relative ml-3 top-[-6rem]">
         {/* Timeline line */}
         <div className="absolute left-0 top-4 bottom-0 border-l-2" />
