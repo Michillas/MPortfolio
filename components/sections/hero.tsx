@@ -8,6 +8,7 @@ import Status from "../shared/status";
 import LaurelBranch from "../decoration/LaurelWreath";
 import Link from "next/link";
 import { useLanguage } from "@/lib/language-context";
+import { TextAnimate } from "../magicui/text-animate";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -36,7 +37,9 @@ const Hero = () => {
             {t('hero.name')}
           </h1>
           <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold !leading-[1.2] tracking-tight text-gray-700 dark:text-gray-300">
-            {t('hero.role')}
+            <TextAnimate animation="blurIn" as="h2">
+              {t('hero.role')}
+            </TextAnimate>
           </h2>
         </div>
         <p className="mt-4 text-[17px] md:text-lg text-gray-600 dark:text-gray-400">

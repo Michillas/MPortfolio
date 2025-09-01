@@ -1,9 +1,9 @@
 "use client";
 
-import { FileTextIcon, QuestionMarkIcon } from "@radix-ui/react-icons";
-import { Banknote, Share2Icon } from "lucide-react";
+import { QuestionMarkIcon } from "@radix-ui/react-icons";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { useLanguage } from "@/lib/language-context";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const files = [
   {
@@ -33,47 +33,71 @@ export function Projects() {
 
   const features = [
     {
-      name: t('projects.forms.name'),
-      description: t('projects.forms.description'),
+      name: t("projects.forms.name"),
+      description: t("projects.forms.description"),
       href: "https://github.com/Michillas/MForms",
-      cta: t('projects.forms.cta'),
+      cta: t("projects.forms.cta"),
       className: "col-span-3 lg:col-span-1",
-      background: <img className="absolute h-[260px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="web3.png"/>,
+      background: (
+        <img
+          className="absolute h-[260px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110"
+          src="web3.png"
+        />
+      ),
     },
     {
-      name: t('projects.finance.name'),
-      description: t('projects.finance.description'),
+      name: t("projects.finance.name"),
+      description: t("projects.finance.description"),
       href: "https://webfinanzas.vercel.app/",
-      cta: t('projects.finance.cta'),
+      cta: t("projects.finance.cta"),
       className: "col-span-3 lg:col-span-2",
-      background: <img className="absolute h-[300px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="web1.png"/>,
+      background: (
+        <img
+          className="absolute h-[300px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110"
+          src="web1.png"
+        />
+      ),
     },
     {
-      name: t('projects.personality.name'),
-      description: t('projects.personality.description'),
+      name: t("projects.personality.name"),
+      description: t("projects.personality.description"),
       href: "https://github.com/Michillas/PersonalityQuiz",
-      cta: t('projects.personality.cta'),
+      cta: t("projects.personality.cta"),
       className: "col-span-3 lg:col-span-2",
-      background: <img className="absolute h-[280px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110" src="web2.png"/>,
+      background: (
+        <img
+          className="absolute h-[280px] w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-110"
+          src="web2.png"
+        />
+      ),
     },
     {
-      name: t('projects.yours.name'),
-      description: t('projects.yours.description'),
+      name: t("projects.yours.name"),
+      description: t("projects.yours.description"),
       className: "col-span-3 lg:col-span-1",
       href: "#",
-      cta: t('projects.yours.cta'),
-      background: <>
+      cta: t("projects.yours.cta"),
+      background: (
+        <>
           <QuestionMarkIcon className="absolute h-[200px] top-8 w-full scale-100 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_1%,#000_100%)] group-hover:scale-110" />
-      </>,
+        </>
+      ),
     },
   ];
   return (
-    <div className="flex items-center justify-center pb-6 px-6 overflow-hidden">
-      <BentoGrid className="max-w-4xl">
-        {features.map((feature, idx) => (
-          <BentoCard key={idx} {...feature} />
-        ))}
-      </BentoGrid>
-    </div>
+    <>
+      <h2 className="mb-14 text-4xl md:text-5xl font-bold text-center tracking-tight">
+        <TextAnimate animation="blurIn" as="h2">
+          {t("projects.title")}
+        </TextAnimate>
+      </h2>
+      <div className="flex items-center justify-center pb-6 px-6 overflow-hidden">
+        <BentoGrid className="max-w-4xl">
+          {features.map((feature, idx) => (
+            <BentoCard key={idx} {...feature} />
+          ))}
+        </BentoGrid>
+      </div>
+    </>
   );
 }
